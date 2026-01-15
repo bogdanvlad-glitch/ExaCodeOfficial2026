@@ -54,10 +54,19 @@ header{
   gap:14px;
 }
 
-.logo img{
-  width:54px;
-  height:54px;
-  object-fit:contain;
+/* LOGO CSS (BUG FREE) */
+.logo-icon{
+  width:46px;
+  height:46px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  font-size:22px;
+  color:#020617;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  box-shadow:0 12px 30px rgba(99,102,241,.45);
 }
 
 .logo span{
@@ -78,12 +87,14 @@ nav a{
 
 nav a:hover{color:white}
 
-/* HERO */
+/* HERO CENTRÉ */
 .hero{
   margin-top:80px;
   display:grid;
-  grid-template-columns:1.3fr 1fr;
-  gap:60px;
+  grid-template-columns:1fr; /* une seule colonne pour centrer le contenu */
+  gap:40px;
+  justify-items:center; /* centre horizontalement tous les éléments */
+  text-align:center;   /* centre le texte à l'intérieur */
   align-items:center;
 }
 
@@ -131,8 +142,10 @@ nav a:hover{color:white}
   padding:45px;
   box-shadow:0 40px 80px rgba(0,0,0,.4);
   animation:float 7s ease-in-out infinite;
+  max-width:500px;
 }
 
+/* FLOAT ANIMATION */
 @keyframes float{
   0%,100%{transform:translateY(0)}
   50%{transform:translateY(-12px)}
@@ -258,8 +271,7 @@ footer{
 /* RESPONSIVE */
 @media(max-width:900px){
   .hero{
-    grid-template-columns:1fr;
-    text-align:center;
+    gap:30px;
   }
   header{
     flex-direction:column;
@@ -273,7 +285,7 @@ footer{
 
 <header class="container">
   <div class="logo">
-    <img alt="Logo Hexacode" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAASABIAAD/4QCMRXhpZgAATU0AKgAAAAgABQESAAMAAAABAAEAAAEaAAUAAAABAAAASgEbAAUAAAABAAAA...TRONQUÉ..."/>
+    <div class="logo-icon">H</div>
     <span>Hexacode</span>
   </div>
   <nav>
@@ -283,6 +295,75 @@ footer{
   </nav>
 </header>
 
-<!-- le reste du site est IDENTIQUE -->
+<section class="container hero">
+  <div>
+    <h1>Nous codons vos idées<br><span>rapidement et efficacement</span></h1>
+    <p>
+      Hexacode est fondée par deux jeunes entrepreneurs passionnés.
+      Nous réalisons des projets web simples ou complexes,
+      en très peu de temps et à prix accessible.
+    </p>
+    <a href="#contact" class="btn">Nous contacter</a>
+  </div>
+
+  <div class="glass">
+    <h3>⚡ Rapide, propre, moderne</h3>
+    <p>Un code de qualité, un design actuel et une livraison express.</p>
+  </div>
+</section>
+
+<section id="services" class="container">
+  <h2 class="section-title">Nos services</h2>
+  <div class="services">
+    <div class="service">
+      <h3>Sites vitrines</h3>
+      <p>Parfaits pour lancer ou présenter votre activité.</p>
+    </div>
+    <div class="service">
+      <h3>Projets complexes</h3>
+      <p>Fonctionnalités sur mesure et structure solide.</p>
+    </div>
+    <div class="service">
+      <h3>Design moderne</h3>
+      <p>Interfaces premium, responsive et animées.</p>
+    </div>
+  </div>
+</section>
+
+<section id="team" class="container">
+  <h2 class="section-title">L’équipe</h2>
+  <div class="team">
+    <div class="member">
+      <div class="avatar"></div>
+      <h3>Bogdan</h3>
+      <p>Développeur web passionné et entrepreneur.</p>
+    </div>
+    <div class="member">
+      <div class="avatar"></div>
+      <h3>Alois</h3>
+      <p>Développeur web créatif et orienté solutions.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="container">
+  <div class="contact">
+    <h2>Nous contacter</h2>
+    <p>📞 +32 474 22 29 26</p>
+    <p>📧 peltieralois@icloud.com</p>
+
+    <form action="mailto:peltieralois@icloud.com" method="post" enctype="text/plain">
+      <input type="text" name="Nom" placeholder="Votre nom" required>
+      <input type="email" name="Email" placeholder="Votre email" required>
+      <textarea name="Message" placeholder="Votre message" rows="5" required></textarea>
+      <button type="submit">Envoyer le message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © 2026 Hexacode — Tous droits réservés
+</footer>
+
 </body>
 </html>
